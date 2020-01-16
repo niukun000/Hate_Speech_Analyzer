@@ -30,10 +30,12 @@ Steps that I took:
 
 
 #### Results
-Below is the results for Dataset 1:
-|Dataset | #Tweets | Classe (#tweets)| Targeting characteristics|
-|--------|---------|-----------------|--------------------------|
-|Twitter_WZ| |||
+Results for upsampling vs downsampling experiment. The experiment is done using SVC.
+- table 1
+
+Overall results comparing different methods. All methods are using upsampling.
+- table 2
+
 
 #### Discusion
 - We observed that using upsampling improve detection of hate speech (recall of hate speech improve from 0.x to 0.y).
