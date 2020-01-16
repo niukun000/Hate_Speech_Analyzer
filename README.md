@@ -26,7 +26,10 @@ Steps that I took:
 
 #### Methods
 - [SKLean SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html): I use default parameters with Linear kernel.
-- Method 2:
+- NB:
+- Logistic Regression:
+- Descision Tree:
+- Random Forest:
 
 
 #### Results
