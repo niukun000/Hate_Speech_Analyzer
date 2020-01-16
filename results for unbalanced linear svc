@@ -1,0 +1,36 @@
+C:\Users\kun\Anaconda3\envs\untitled\python.exe D:/400/project/imbalanced_data.py
+unbalanced
+Accuracy of SVM= 0.8876694641704326
+                    precision    recall  f1-score   support
+
+       hate_speech       0.46      0.22      0.30       359
+offensive_language       0.91      0.96      0.93      4800
+           neither       0.83      0.80      0.82      1037
+
+          accuracy                           0.89      6196
+         macro avg       0.74      0.66      0.68      6196
+      weighted avg       0.87      0.89      0.88      6196
+
+upsampling
+Accuracy of SVM= 0.8956131924431636
+                    precision    recall  f1-score   support
+
+       hate_speech       0.87      0.94      0.90      1024
+offensive_language       0.90      0.84      0.87      1056
+           neither       0.92      0.91      0.92      1043
+
+          accuracy                           0.90      3123
+         macro avg       0.90      0.90      0.90      3123
+      weighted avg       0.90      0.90      0.90      3123
+
+downsampling
+Accuracy of SVM= 0.8070829450139795
+                    precision    recall  f1-score   support
+
+       hate_speech       0.78      0.69      0.73       368
+offensive_language       0.81      0.80      0.80       355
+           neither       0.83      0.94      0.88       350
+
+          accuracy                           0.81      1073
+         macro avg       0.81      0.81      0.81      1073
+      weighted avg       0.80      0.81      0.80      1073
