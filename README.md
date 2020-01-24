@@ -49,6 +49,7 @@ Accuracy of LinearSVC= 0.898930804922332
           accuracy                           0.90      4957
          macro avg       0.76      0.70      0.72      4957
       weighted avg       0.89      0.90      0.89      4957
+      cross validation score [0.88521283 0.88985273 0.89933427 0.90334948 0.89830508]
       
 upsampling data
 
@@ -63,7 +64,7 @@ offensive_language       1.00      0.92      0.96      3795
           accuracy                           0.97     11514
          macro avg       0.98      0.97      0.97     11514
       weighted avg       0.98      0.97      0.97     11514
-    cross validation score [0.96673615 0.96690985 0.98254299 0.97351051 0.97985062]
+      cross validation score [0.96673615 0.96690985 0.98254299 0.97351051 0.97985062]
       
 downsampling data
 
@@ -78,6 +79,7 @@ Accuracy of LinearSVC= 0.8193473193473193
           accuracy                           0.82       858
          macro avg       0.82      0.82      0.82       858
       weighted avg       0.82      0.82      0.82       858
+      cross validation score [0.78438228 0.81585082 0.79137529 0.74358974 0.74358974]
 
 Overall results comparing different methods. All methods are using upsampling.
 
@@ -94,6 +96,7 @@ Accuracy of MultinomialNB= 0.9402466562445718
           accuracy                           0.94     11514
          macro avg       0.95      0.94      0.94     11514
       weighted avg       0.95      0.94      0.94     11514
+      cross validation score [0.9235713  0.92496092 0.94120201 0.93859649 0.93590412]
 
 results fore LogisticRegression
 
@@ -108,6 +111,7 @@ Accuracy of logistic regression= 0.9543164842800069
         accuracy                           0.95     11514
        macro avg       0.96      0.95      0.95     11514
     weighted avg       0.96      0.95      0.95     11514
+    cross validation score [0.94102831 0.94311273 0.96525968 0.95935383 0.95961438]
 
 Results for DecisionTree
 
@@ -122,6 +126,8 @@ Accuracy of DecisionTreeClassifier= 0.9535348271669272
           accuracy                           0.95     11514
          macro avg       0.96      0.95      0.95     11514
       weighted avg       0.96      0.95      0.95     11514
+    cross validation score [0.96030919 0.96769151 0.97550808 0.97238145 0.97403161]
+
 Results for RandomForest
 
 Accuracy of RandomForestClassifier= 0.9773319437206879
@@ -135,6 +141,7 @@ Accuracy of RandomForestClassifier= 0.9773319437206879
           accuracy                           0.98     11514
          macro avg       0.98      0.98      0.98     11514
       weighted avg       0.98      0.98      0.98     11514
+      cross validation score [0.97090499 0.97802675 0.98584332 0.97967692 0.98280354]
 
 #### Discusion
 - We observed that using upsampling improve detection of hate speech (recall of hate speech improve from 0.x to 0.y).
