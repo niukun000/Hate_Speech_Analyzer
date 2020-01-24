@@ -58,7 +58,7 @@ Accuracy of LinearSVC= 0.9743790168490534
                     precision    recall  f1-score   support
 
        hate_speech       0.96      1.00      0.98      3887
-offensive_language       1.00      0.92      0.96      3795
+         offensive       1.00      0.92      0.96      3795
            neither       0.97      1.00      0.98      3832
 
           accuracy                           0.97     11514
