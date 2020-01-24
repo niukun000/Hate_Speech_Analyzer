@@ -14,7 +14,7 @@ class Traditional_method:
         :param model: sckit learn model
         '''
         self.model = pipeline.Pipeline([
-            ('counts', feature_extraction.text.CountVectorizer(min_df=1)),
+            ('counts', feature_extraction.text.CountVectorizer(min_df=1, stop_words="english",analyzer="word", ngram_range=(1,2))),
             ('tfidf', feature_extraction.text.TfidfTransformer()),
             (model_name, model),
         ])
