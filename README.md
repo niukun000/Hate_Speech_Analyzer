@@ -1,12 +1,6 @@
 # Hate_Speech_Analyzer
 
 Niu Kun's CMPT400 project.
-kun edited this
-
-File Name: imbalanced.py
-methods: pipline, LinearSVC
-results: results for unbalanced LinearSVC
-
 
 ### Dataset
 1. [labeled_data.csv](https://github.com/t-davidson/hate-speech-and-offensive-language): From "Davidson T, Warmsley D, Macy MW, Weber I. Automated Hate Speech Detection and the                                                        Problem of Offensive Language. ICWSM. 2017;.". 
@@ -33,10 +27,10 @@ Steps that I took:
 
 #### Methods
 - [SKLean SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html): I use default parameters with Linear kernel.
-- [MultimonialNB](https://scikit-        learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB)
+- [MultimonialNB] (https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB)
 - [Logistic Regression] (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 - [Descision Tree] (https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
-- [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+- [Random Forest] (https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 
 
 #### Results
@@ -77,7 +71,7 @@ Accuracy of LinearSVC= 0.8193473193473193
                     precision    recall  f1-score   support
 
        hate_speech       0.84      0.68      0.75       297
-offensive_language       0.77      0.86      0.81       279
+         offensive       0.77      0.86      0.81       279
            neither       0.86      0.93      0.89       282
 
           accuracy                           0.82       858
