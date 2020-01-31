@@ -51,6 +51,18 @@ Accuracy of LinearSVC= 0.898930804922332
       weighted avg       0.89      0.90      0.89      4957
       cross validation score [0.88521283 0.88985273 0.89933427 0.90334948 0.89830508]
       
+  Results for upsampling resampling 
+    
+                    precision    recall  f1-score   support
+
+       hate_speech       0.54      0.13      0.21       286
+         offensive       0.93      0.96      0.94      3838
+           neither       0.83      0.90      0.86       832
+
+          accuracy                           0.90      4956
+         macro avg       0.76      0.66      0.67      4956
+      weighted avg       0.89      0.90      0.89      4956
+      
 upsampling data
 
 Accuracy of LinearSVC= 0.9743790168490534
@@ -142,6 +154,8 @@ Accuracy of RandomForestClassifier= 0.9773319437206879
          macro avg       0.98      0.98      0.98     11514
       weighted avg       0.98      0.98      0.98     11514
       cross validation score [0.97090499 0.97802675 0.98584332 0.97967692 0.98280354]
+      
+      
 
 #### Discusion
 - We observed that using upsampling improve detection of hate speech (recall of hate speech improve from 0.x to 0.y).
