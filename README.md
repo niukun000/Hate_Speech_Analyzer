@@ -158,5 +158,9 @@ Accuracy of RandomForestClassifier= 0.9773319437206879
       
 
 #### Discusion
+- We observe that using LinearSVC with unbalanced dataset every score seems very high except scores for hate speech
+- We observed that by using LinearSVC with under sampling, all scores seems reaonable, how ever upsampling should be a better choice due to small amount of data
+- We observed that by applying upsampling before split, the results are overfitted, even crossvaladation cant figure out, the reason is that every minor class have too many duplicates so that many of the test cases are being seen in the training set already
 - We observed that using upsampling improve detection of hate speech (recall of hate speech improve from 0.x to 0.y).
+- We observee that by using LinearSVC with upsampling data before split, there is not much difference to unbalanced data
 
