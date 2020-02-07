@@ -95,65 +95,17 @@ Accuracy of LinearSVC= 0.8193473193473193
 
 Overall results comparing different methods. All methods are using upsampling.
 
-results for MultimonialNB
+                                 Macro                                 Micro
 
-Accuracy of MultinomialNB= 0.9402466562445718
+|DT   |  precision   | recall  |   f1-score  |  precision |  recall  |   f1-score |
+|--------|---------|---------|-----------|-------------|--------|---------|
+|LinearSVC |  0.74,     |   0.68,    |  0.69,     |  0.9,     |   0.9,   |     0.9 |
+logistic regression  | 0.73, | 0.75,  |0.73, | 0.89, | 0.89,  |0.89 |
+MultinomialNB | 0.72,| 0.64,| 0.67,| 0.86,| 0.86 | 0.86|
+DecisionTreeClassifier |0.68,| 0.67, |0.67, |0.87, |0.87, |0.87|
+RandomForestClassifier| 0.76,| 0.6,| 0.62,| 0.88,| 0.88,| 0.88
 
-                    precision    recall  f1-score   support
 
-       hate_speech       0.88      1.00      0.94      3801
-         offensive       0.99      0.83      0.91      3860
-           neither       0.96      0.99      0.97      3853
-
-          accuracy                           0.94     11514
-         macro avg       0.95      0.94      0.94     11514
-      weighted avg       0.95      0.94      0.94     11514
-      cross validation score [0.9235713  0.92496092 0.94120201 0.93859649 0.93590412]
-
-results fore LogisticRegression
-
-Accuracy of logistic regression= 0.9543164842800069
-
-                    precision    recall  f1-score   support
-
-     hate_speech       0.93      0.99      0.96      3788
-       offensive       0.99      0.88      0.93      3833
-         neither       0.95      0.99      0.97      3893
-
-        accuracy                           0.95     11514
-       macro avg       0.96      0.95      0.95     11514
-    weighted avg       0.96      0.95      0.95     11514
-    cross validation score [0.94102831 0.94311273 0.96525968 0.95935383 0.95961438]
-
-Results for DecisionTree
-
-Accuracy of DecisionTreeClassifier= 0.9535348271669272
-
-                    precision    recall  f1-score   support
-
-       hate_speech       0.90      1.00      0.95      3801
-         offensive       1.00      0.86      0.93      3860
-           neither       0.97      1.00      0.98      3853
-
-          accuracy                           0.95     11514
-         macro avg       0.96      0.95      0.95     11514
-      weighted avg       0.96      0.95      0.95     11514
-    cross validation score [0.96030919 0.96769151 0.97550808 0.97238145 0.97403161]
-
-Results for RandomForest
-
-Accuracy of RandomForestClassifier= 0.9773319437206879
-
-                    precision    recall  f1-score   support
-
-       hate_speech       0.97      1.00      0.98      3801
-         offensive       0.99      0.94      0.97      3860
-           neither       0.97      0.99      0.98      3853
-
-          accuracy                           0.98     11514
-         macro avg       0.98      0.98      0.98     11514
-      weighted avg       0.98      0.98      0.98     11514
-      cross validation score [0.97090499 0.97802675 0.98584332 0.97967692 0.98280354]
       
       
 
