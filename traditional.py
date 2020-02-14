@@ -21,10 +21,8 @@ class sm(SMOTE):
     def transform(self, X, y):
         return X, y
 
-class Traditional_method(SMOTE):
+class Traditional_method():
     def __init__(self, model, model_name="unknown model"):
-        # super()
-        super().__init__()
         '''
         Build tradition method class
         :param file: csv file
@@ -32,16 +30,12 @@ class Traditional_method(SMOTE):
         :param model: sckit learn model
         '''
         self.model = pipeline.Pipeline([
-
             ('counts', feature_extraction.text.CountVectorizer(
                 min_df=5, stop_words="english",analyzer="word", ngram_range=(1,2)
-            )
-             ),
+            )),
             ('tfidf', feature_extraction.text.TfidfTransformer()),
-            # ("fasd", sm),
-            (model_name, model),
-        ])
-        # self.data = data
+            (model_name, model) ])
+
         self.model_name = model_name
 
 
@@ -52,8 +46,8 @@ class Traditional_method(SMOTE):
         for train_idx, test_idx, in cv.split(X, y):
             X_train, y_train = X[train_idx], y[train_idx]
             X_test, y_test = X[test_idx], y[test_idx]
+            
             self.model.fit(X_train, y_train)
-            # fit_time = time.time()
 
             y_pred = self.model.predict(X_test)
 
@@ -65,16 +59,11 @@ if __name__ == '__main__':
 
     data  = get_data.read_file("labeled_data.csv")
 
-
-
-
     linear_svc = Traditional_method(LinearSVC(), "LinearSVC")
     X, y = data
     linear_svc.classify(X, y)
 
-    logistic_regression_method = Traditional_method(LogisticRegression(max_iter=1000),
-                                                                "logistic regression")
-
+    logistic_regression_method = Traditional_method(LogisticRegression(max_iter=1000),"logistic regression")
     logistic_regression_method.classify(data[0], data[1])
 
     gaussion_nb_method = Traditional_method(MultinomialNB(), "MultinomialNB")
@@ -84,10 +73,7 @@ if __name__ == '__main__':
     gaussion_nb_method.classify(data[0], data[1])
 
     decision_tree_method = Traditional_method(DecisionTreeClassifier(), "DecisionTreeClassifier")
-    # decision_tree_method.classification_report(get_data.upsampling(data), "upsampling")
     decision_tree_method.classify(data[0], data[1])
 
     random_forest_method = Traditional_method(RandomForestClassifier(), "RandomForestClassifier")
-
-
     random_forest_method.classify(data[0], data[1])
