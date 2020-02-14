@@ -1,18 +1,27 @@
 import numpy as np
 from scipy.sparse import issparse, isspmatrix
 from sklearn import pipeline, feature_extraction, svm, metrics
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, cross_val_score, StratifiedKFold
 from sklearn.model_selection import KFold
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
-
+from sklearn.tree import DecisionTreeClassifier
 
 from traditional_methods import get_data
 import time
 import numpy as np
 from imblearn.over_sampling import SMOTE, RandomOverSampler
-# from sklearn.metrics import F
 
-class Traditional_method:
+
+class sm(SMOTE):
+    def fit(self, X, y):
+        return self.fit_resample(X, y)
+    def transform(self, X, y):
+        return X, y
+
+class Traditional_method(SMOTE):
     def __init__(self, model, model_name="unknown model"):
         # super()
         super().__init__()
@@ -29,97 +38,56 @@ class Traditional_method:
             )
              ),
             ('tfidf', feature_extraction.text.TfidfTransformer()),
+            # ("fasd", sm),
             (model_name, model),
         ])
         # self.data = data
         self.model_name = model_name
 
-    def k_fold(self, data_type):
-        print(data_type + " data")
-
-        kfold = KFold(5, True, 1)
-        # enumerate splits
-        X = np.array(data["tweet"])
-        y = np.array(data["class"])
-        for train_index, test_index in kfold.split(X):
-            X_train = X[train_index]
-            y_train = y[train_index]
-
-            X_test = X[test_index]
-            y_test = y[test_index]
-            self.model.fit(X_train, y_train)
-            # fit_time = time.time()
-
-            y_pred = self.model.predict(X_test)
-
-            print('Accuracy of ' + self.model_name + '= {}'.format(
-                np.mean(y_pred == y_test)))
-            print(metrics.classification_report(
-                y_test, y_pred, target_names=["hate_speech", "offensive_language", "neither"]))
-    # def upsampling(self, data):
-    def classification_report(self, X, y , data_type="unbalanced"):
-        # data= self.data
-        # X, y = data["tweet"], data["class"]
-        clf = self.model
-        scores = cross_val_score(clf, X, y, cv=5)
-        # print("cross validation score", scores)
-        X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
-        # sm = SMOTE()
-        # X_train, X_test = sm.fit_sample(X_train, y_train.ravel())
-        X_train, y_train = get_data.up_sampling(X_train, y_train)
-        start_time = time.time()
-        self.model.fit(X_train, y_train)
-        fit_time = time.time()
-
-        y_pred = self.model.predict(X_test)
-
-        print(self.model_name + " with " + data_type)
-        print(metrics.classification_report(
-                y_test, y_pred, target_names=["hate_speech", "offensive_language", "neither"]))
-
-        print("time comsume to fit model", fit_time - start_time)
-        print()
-        print('Accuracy of '+ self.model_name + 'on test sets= {}'.format(
-            np.mean(y_pred == y_test)))
-        print()
-        X_pred = self.model.predict(X_train)
-        print("Accuracy on training set", np.mean(y_train == X_pred))
-        print(0)
-        print("cross validation score", scores)
-        print()
 
     def classify(self, X, y):
         # self.split(X,y)
         cv = StratifiedKFold(n_splits=5)
+        results = [0,0,0, 0,0,0,0,0,0]
         for train_idx, test_idx, in cv.split(X, y):
             X_train, y_train = X[train_idx], y[train_idx]
             X_test, y_test = X[test_idx], y[test_idx]
-            # print(np.array(X_train))
-            # X_train, y_train = RandomOverSampler().fit_sample(X_train.as_metrix(), y_train.ravel())
-            # X_resampled, y_resampled = ros.fit_resample(X, y)
-
-            X_train, y_train = get_data.up_sampling(X_train, y_train)
             self.model.fit(X_train, y_train)
             # fit_time = time.time()
 
             y_pred = self.model.predict(X_test)
-            print(metrics.classification_report(
-                y_test, y_pred, target_names=["hate_speech", "offensive_language", "neither"]))
 
+            results = [x + y for x, y in zip(results , list( metrics.precision_recall_fscore_support(y_test, y_pred, average="macro")[:-1] + metrics.precision_recall_fscore_support(y_test, y_pred, average="micro")[:-1] + metrics.precision_recall_fscore_support(y_test, y_pred, average="weighted")[:-1]))]
+            print(results)
+        print(self.model_name, [round(x / 5, 2) for x in results ])
 
 if __name__ == '__main__':
-    # data = clean_text(df)
-    # data1 = upsampling(clean_text((df)))
-    # data2 = downsampling(clean_text(df))
-    X, y = get_data.read_file("labeled_data.csv")
-    # x_T = []
-    # print(list(X))
-    # for i in X:
-    #     print(i)
-    # X, y = SMOTE().fit_sample(X, y)
 
-    # svm = Traditional_method( svm.LinearSVC(), "LinearSVC")
-    # svm.classification_report(get_data.upsampling(X, y), "upsampling data")
+    data  = get_data.read_file("labeled_data.csv")
+
+
+
 
     linear_svc = Traditional_method(LinearSVC(), "LinearSVC")
+    X, y = data
     linear_svc.classify(X, y)
+
+    logistic_regression_method = Traditional_method(LogisticRegression(max_iter=1000),
+                                                                "logistic regression")
+
+    logistic_regression_method.classify(data[0], data[1])
+
+    gaussion_nb_method = Traditional_method(MultinomialNB(), "MultinomialNB")
+    gaussion_nb_method.classify(data[0], data[1])
+
+    gaussion_nb_method =Traditional_method(MultinomialNB(), "MultinomialNB")
+    gaussion_nb_method.classify(data[0], data[1])
+
+    decision_tree_method = Traditional_method(DecisionTreeClassifier(), "DecisionTreeClassifier")
+    # decision_tree_method.classification_report(get_data.upsampling(data), "upsampling")
+    decision_tree_method.classify(data[0], data[1])
+
+    random_forest_method = Traditional_method(RandomForestClassifier(), "RandomForestClassifier")
+
+
+    random_forest_method.classify(data[0], data[1])
