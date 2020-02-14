@@ -14,16 +14,15 @@ Niu Kun's CMPT400 project.
 
 #### Data Pre-processing
 Steps that I took:
-1. Split wth StratifiedKfold (preserving the percentage of samples for each class.)
-2. Remove tags, non word charactors    #word#  @kun, ().,
-3. tokenize sentence in to words
+1. Split with StratifiedKfold (preserving the percentage of samples for each class.)
+2. Remove tags, non-word characters    #word#  @kun, ().,
+3. tokenize sentence into words
 4. Convert words into lists of lower case tokens
-5. Removing Stop words  (!!!delete whole sentence with label if this make sentence empty) 
-6. Convert all tokens to a dictionary of unique word with frequence of occurancy as values (Bag-Of-Word feature extraction)
-7. Removing word occurenvy less than 5
+5. Removing English Stop words  
+6. Convert all tokens to a dictionary of unique word with frequency of occurrence as values (Bag-Of-Word feature extraction)
+7. Removing word occurrence less than 5
 8. Reassign weight to values of each word with tf-idf
-    tf dif: term frequency–inverse document frequency,
-
+    tf dif: term frequency-inverse document frequency,
 
 #### Methods
 - [SKLean SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html): I use default parameters with Linear kernel.
@@ -43,16 +42,12 @@ Steps that I took:
 logistic regression  | 0.73, | 0.75,  |0.73, | 0.89, | 0.90,  |0.89 |
 MultinomialNB | 0.72,| 0.64,| 0.67,| 0.85,| 0.85 | 0.81|
 DecisionTreeClassifier |0.68,| 0.67, |0.67, |0.87, |0.88, |0.87|
-RandomForestClassifier| 0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89
+RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 
 
       
       
 
 #### Discusion
-- We observe that using LinearSVC with unbalanced dataset every score seems very high except scores for hate speech
-- We observed that by using LinearSVC with under sampling, all scores seems reaonable, how ever upsampling should be a better choice due to small amount of data
-- We observed that by applying upsampling before split, the results are overfitted, even crossvaladation cant figure out, the reason is that every minor class have too many duplicates so that many of the test cases are being seen in the training set already
-- We observed that using upsampling improve detection of hate speech (recall of hate speech improve from 0.x to 0.y).
-- We observee that by using LinearSVC with upsampling data before split, there is not much difference to unbalanced data
+- We observe that RandomForestClassifier has highest macro Recall and Weight average for all precision recall and f1, and logistic regression has best overall scores
 
