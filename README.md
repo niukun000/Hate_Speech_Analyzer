@@ -23,6 +23,7 @@ Steps that I took:
 7. Removing word occurrence less than 5
 8. Reassign weight to values of each word with tf-idf
     tf dif: term frequency-inverse document frequency,
+9. Split data Use StratifiedKFold with 5 splits
 
 #### Methods
 - [SKLean SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html): I use default parameters with Linear kernel.
@@ -50,4 +51,34 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 
 #### Discusion
 - We observe that RandomForestClassifier has highest macro Recall and Weight average for all precision recall and f1, and logistic regression has best overall scores
+
+
+### Deep learning methods
+
+#### Dara Preprocessing
+1. Remove tags 
+2. Replace newline and tabs with space
+3. add missing space after full stops and commas
+4. Tokenize sentence into individual words
+5. Change words into lower cases
+6. Remove none word charactors
+7. Remove stop words
+8. Remove suffix of words
+9. Embedding words
+10. Split data Use StratifiedKFold with 5 splits
+
+#### Methods
+1, CNN
+2, LSTM
+3, CNN + LSTM
+
+#### Results
+
+                                 Macro average                                 Weight average
+
+|DT   |  precision   | recall  |   f1-score  |  precision |  recall  |   f1-score |
+|--------|---------|---------|-----------|-------------|--------|---------|
+|LSTM| 0.65   |   0.67   |   0.66 | 0.85 |     0.85   |   0.85|
+|CNN  |0.58   |   0.62   |   0.60| 0.81  |    0.80 |     0.80|
+|CNN+LSTM  | 0.65| 0.69| 0.67| 0.85 |0.84|0.85|
 
