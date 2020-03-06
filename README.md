@@ -61,9 +61,10 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 3. add missing space after full stops and commas
 4. Tokenize sentence into individual words
 5. Change words into lower cases
-6. Remove none word charactors
+6. Remove punctuations none word charactors
 7. Remove stop words
-8. Remove suffix of words
+8. Change :nt" to "not"
+9. lemmatize words
 9. Embedding words
 10. Split data Use StratifiedKFold with 5 splits
 
@@ -78,7 +79,8 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 
 |DT   |  precision   | recall  |   f1-score  |  precision |  recall  |   f1-score |
 |--------|---------|---------|-----------|-------------|--------|---------|
-|LSTM| 0.65   |   0.67   |   0.66 | 0.85 |     0.85   |   0.85|
-|CNN  |0.58   |   0.62   |   0.60| 0.81  |    0.80 |     0.80|
-|CNN+LSTM  | 0.65| 0.69| 0.67| 0.85 |0.84|0.85|
+|LSTM| 0.67   |   0.70   |   0.69 | 0.87 |     0.85   |   0.86|
+|CNN  |0.71   |   0.60   |   0.63| 0.85  |    0.85 |     0.85|
+|CNN+LSTM  | 0.64| 0.68| 0.68| 0.86 |0.84|0.85|
+|CNN+LSTM glove|0.62|0.53|0.56|0.81|0.812|0.80|
 
