@@ -72,6 +72,7 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 1, CNN
 2, LSTM
 3, CNN + LSTM
+4, CNN+LSTM gloveEmbedding
 
 #### Results
 
@@ -82,5 +83,5 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 |LSTM| 0.67   |   0.70   |   0.69 | 0.87 |     0.85   |   0.86|
 |CNN  |0.71   |   0.60   |   0.63| 0.85  |    0.85 |     0.85|
 |CNN+LSTM  | 0.64| 0.68| 0.68| 0.86 |0.84|0.85|
-|CNN+LSTM glove|0.62|0.53|0.56|0.81|0.812|0.80|
+|CNN+LSTM glove|0.62|0.53|0.56|0.81|0.82|0.80|
 
