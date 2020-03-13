@@ -73,6 +73,8 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 2, LSTM
 3, CNN + LSTM
 4, CNN+LSTM gloveEmbedding
+5, LSTM + glove + attention
+6, CNN + glove + attention
 
 #### Results
 
