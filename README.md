@@ -62,11 +62,8 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 4. Tokenize sentence into individual words
 5. Change words into lower cases
 6. Remove punctuations none word charactors
-7. Remove stop words
-8. Change :nt" to "not"
-9. lemmatize words
-9. Embedding words
-10. Split data Use StratifiedKFold with 5 splits
+7. Embedding words
+8. Split data Use StratifiedKFold with 5 splits
 
 #### Methods
 1. CNN
