@@ -69,12 +69,12 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 10. Split data Use StratifiedKFold with 5 splits
 
 #### Methods
-1, CNN
-2, LSTM
-3, CNN + LSTM
-4, CNN+LSTM gloveEmbedding
-5, LSTM + glove + attention
-6, CNN + glove + attention
+1. CNN
+2. LSTM
+3. CNN + LSTM
+4. CNN+LSTM gloveEmbedding
+5. LSTM + glove + attention
+6. CNN + glove + attention
 
 #### Results
 
@@ -91,7 +91,7 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 
 |DT   |  precision   | recall  |   f1-score  |  precision |  recall  |   f1-score |
 |--------|---------|---------|-----------|-------------|--------|---------|
-|LSTM| 0.75   |   0.69   |   0.70 | 0.89 |     0.90   |   0.89|
-|CNN  |0.77   |   0.67   |   0.69| 0.89  |    0.90 |     0.89|
+|LSTM+glove+attention| 0.75   |   0.69   |   0.70 | 0.89 |     0.90   |   0.89|
+|CNN+glove+attention |0.77   |   0.67   |   0.69| 0.89  |    0.90 |     0.89|
 
 
