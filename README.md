@@ -2,6 +2,8 @@
 
 Niu Kun's CMPT400 project.
 
+
+
 ### Dataset
 1. [labeled_data.csv](https://github.com/t-davidson/hate-speech-and-offensive-language): From "Davidson T, Warmsley D, Macy MW, Weber I. Automated Hate Speech Detection and the                                                        Problem of Offensive Language. ICWSM. 2017;.". 
 2. [Twitter_DT](https://www.google.com)
@@ -82,7 +84,9 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 |LSTM| 0.67   |   0.68   |   0.67 | 0.87 |     0.86   |   0.86|
 |CNN  |0.71   |   0.60   |   0.63| 0.85  |    0.85 |     0.85|
 |CNN+LSTM  | 0.64| 0.68| 0.68| 0.86 |0.84|0.85|
-|CNN+LSTM glove|0.62|0.53|0.56|0.81|0.82|0.80|
+|LSTM+Attention300d|0.65|0.65|0.65|0.85|0.84|0.85|
+|CNN+Attention300d|0.70|0.69|0.69|0.87|0.88|0.88|
+|CNN+LSTM glove50d|0.62|0.53|0.56|0.81|0.82|0.80|
 
                                  Macro average                                 Weight average
 
@@ -92,5 +96,15 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 |CNN+glove50d+attention |0.77   |   0.67   |   0.69| 0.89  |    0.90 |     0.89|
 |LSTM+glove300d+attention|0.70|0.70|0.69 |0.88|0.88|0.88|
 |CNN+glove300d+attention|0.69|0.70|0.70|0.88|0.87|0.87|
+
+### 03-20 disscussion
+glove 300d is worse than glove 50d
+
+#### questions 
+for the final model to predict which model should I use to predict sice I use 5 fold StratifiedKFold
+how to deal the weight matrix I extracted from model
+
+
+
 
 
