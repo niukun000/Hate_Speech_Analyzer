@@ -88,7 +88,8 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 
 |DT   |  precision   | recall  |   f1-score  |  precision |  recall  |   f1-score |
 |--------|---------|---------|-----------|-------------|--------|---------|
-|LSTM+glove+attention| 0.75   |   0.69   |   0.70 | 0.89 |     0.90   |   0.89|
-|CNN+glove+attention |0.77   |   0.67   |   0.69| 0.89  |    0.90 |     0.89|
+|LSTM+glove50d+attention| 0.75   |   0.69   |   0.70 | 0.89 |     0.90   |   0.89|
+|CNN+glove50d+attention |0.77   |   0.67   |   0.69| 0.89  |    0.90 |     0.89|
+|CNN+LSTM+glove300d+attention|0.69|0.70|0.70|0.88|0.87|0.87|
 
 
