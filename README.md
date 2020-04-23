@@ -2,7 +2,11 @@
 
 Niu Kun's CMPT400 project.
 
+first you will need to download [labeled_data.csv](https://github.com/sroylee/Hate_Speech_Analyzer/blob/master/labeled_data.csv)
+for traditional methods you will need to download [traditional.py](https://github.com/sroylee/Hate_Speech_Analyzer/blob/master/traditional.pyhttps://github.com/sroylee/Hate_Speech_Analyzer/blob/master/traditional.py) if you want to run all the methods at once or if you want to run a specific method download from folder traditional_methods(https://github.com/sroylee/Hate_Speech_Analyzer/tree/master/traditional_methods)
 
+for deep learning part download [glove42b300d](https://www.kaggle.com/yutanakamura/glove42b300dtxt/download/IjFbsoZLA4Kd36Ryfr4i%2Fversions%2FldcMwWdW7Qf8LQbPSaHX%2Ffiles%2Fglove.42B.300d.txt?datasetVersionNumber=1) or other pretrained embedding and [labeled_data.csv](https://github.com/sroylee/Hate_Speech_Analyzer/blob/master/labeled_data.csv) directly to your google drive 
+and open [DeepLearning.ipyb] with colab you can also further tune parameters or change datasets or pre-trained embeddings 
 
 ### Dataset
 1. [labeled_data.csv](https://github.com/t-davidson/hate-speech-and-offensive-language): From "Davidson T, Warmsley D, Macy MW, Weber I. Automated Hate Speech Detection and the                                                        Problem of Offensive Language. ICWSM. 2017;.". 
@@ -100,9 +104,7 @@ RandomForestClassifier|  0.76,| 0.6,| 0.62,| 0.89,| 0.90,| 0.89|
 ### 03-20 disscussion
 glove 300d is worse than glove 50d
 
-#### questions 
-for the final model to predict which model should I use to predict sice I use 5 fold StratifiedKFold
-how to deal the weight matrix I extracted from model
+
 
 
 
